@@ -5,14 +5,14 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
 
 const readData = async () => {
   try {
-    const data = await fs.readFile(path.join(__dirname, '../db.json'), 'utf-8');
+    const data = await fs.readFile(path.join(__dirname, './db.json'), 'utf-8');
     return JSON.parse(data);
   } catch (error) {
     console.error('Error reading file:', error);
@@ -22,14 +22,14 @@ const readData = async () => {
 
 const writeData = async (data) => {
   try {
-    await fs.writeFile(path.join(__dirname, '../db.json'), JSON.stringify(data, null, 2));
+    await fs.writeFile(path.join(__dirname, './db.json'), JSON.stringify(data, null, 2));
   } catch (error) {
     console.error('Error writing file:', error);
   }
 };
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../index.html'));
+  res.sendFile(path.join(__dirname, './index.html'));
 });
 
 app.get('/usuarios', async (req, res) => {
