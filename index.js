@@ -32,10 +32,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './index.html'));
 });
 
-app.get('/hello', (req, res) => {
-  res.send("Hola Mundito");
-});
-
 app.get('/usuarios', async (req, res) => {
   const usuarios = await readData();
   res.json(usuarios.usuario);
