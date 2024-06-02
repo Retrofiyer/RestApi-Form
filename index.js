@@ -5,7 +5,7 @@ const cors = require('cors');
 const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -30,6 +30,10 @@ const writeData = async (data) => {
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './index.html'));
+});
+
+app.get('/hello', (req, res) => {
+  res.send("Hola Mundito");
 });
 
 app.get('/usuarios', async (req, res) => {
@@ -67,5 +71,5 @@ app.post('/usuarios', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Servidor escuchando en el puerto ${PORT}...`);
+  console.log(`Servidor escuchando en el puerto ${port}...`);
 });
