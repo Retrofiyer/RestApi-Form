@@ -71,6 +71,18 @@
       "firstName": "Alexander",
       "lastName": "Allauca",
       "age": 30
+    },
+    {
+      "id": 13,
+      "firstName": "Alexandra",
+      "lastName": "Chabla",
+      "age": 50
+    },
+    {
+      "id": 14,
+      "firstName": "Pedro",
+      "lastName": "Vicente",
+      "age": 60
     }
   ]
 }

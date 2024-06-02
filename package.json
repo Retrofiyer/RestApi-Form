@@ -5,6 +5,7 @@
     "express": "^4.19.2"
   },
   "scripts": {
+    "build": "node build",
     "start": "node ./js/server.js"
   },
   "name": "restapi",

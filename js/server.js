@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs').promises;
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const PORT = 5000;
@@ -11,7 +12,7 @@ app.use(bodyParser.json());
 
 const readData = async () => {
   try {
-    const data = await fs.readFile('./db.json', 'utf-8');
+    const data = await fs.readFile(path.join(__dirname, '../db.json'), 'utf-8');
     return JSON.parse(data);
   } catch (error) {
     console.error('Error reading file:', error);
@@ -21,14 +22,14 @@ const readData = async () => {
 
 const writeData = async (data) => {
   try {
-    await fs.writeFile('./db.json', JSON.stringify(data, null, 2));
+    await fs.writeFile(path.join(__dirname, '../db.json'), JSON.stringify(data, null, 2));
   } catch (error) {
     console.error('Error writing file:', error);
   }
 };
 
 app.get('/', (req, res) => {
-  res.send('Welcome to my first API with Node.js!');
+  res.sendFile(path.join(__dirname, '../index.html'));
 });
 
 app.get('/usuarios', async (req, res) => {
