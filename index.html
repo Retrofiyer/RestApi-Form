@@ -50,10 +50,8 @@
     </div>
 
     <script>
-        const isProduction = window.location.hostname !== 'localhost';
-        const apiUrl = isProduction ? 'https://rest-api-form.vercel.app/usuarios' : 'http://localhost:5000/usuarios';
+        const apiUrl = window.location.hostname === 'localhost' ? 'http://localhost:5000/usuarios' : 'https://rest-api-form.vercel.app/usuarios';
 
-        console.log('isProduction:', isProduction);
         console.log('API URL:', apiUrl);
 
         async function addUser() {
