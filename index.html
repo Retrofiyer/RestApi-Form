@@ -49,8 +49,10 @@
         <div id="usersData"></div>
     </div>
 
-    <script>
-        const apiUrl =  'https://rest-api-form.vercel.app/' || `http://localhost:${port}/usuarios`;
+    <script>   
+        const isProduction = window.location.hostname !== 'localhost';
+        
+        const apiUrl = isProduction ? 'https://rest-api-form.vercel.app/usuarios' : `http://localhost:${port}/usuarios`;
 
         async function addUser() {
             const firstName = document.getElementById('firstName').value;
