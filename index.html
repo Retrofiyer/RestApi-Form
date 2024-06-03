@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Rest Client</title>
+    <title>APIRest</title>
     <style>
         body {
             display: flex;
@@ -50,7 +50,7 @@
     </div>
 
     <script>
-        const apiUrl = 'http://localhost:5000/usuarios';
+        const apiUrl =  process.env.API_URL || `http://localhost:${port}/usuarios`;
 
         async function addUser() {
             const firstName = document.getElementById('firstName').value;
