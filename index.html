@@ -50,7 +50,7 @@
     </div>
 
     <script>
-        const apiUrl =  process.env.API_URL || `http://localhost:${port}/usuarios`;
+        const apiUrl =  process.env.URL_VERCEL || `http://localhost:${port}/usuarios`;
 
         async function addUser() {
             const firstName = document.getElementById('firstName').value;
