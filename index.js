@@ -32,6 +32,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './index.html'));
 });
 
+app.get('/hello', (req, res) => {
+  res.send("Hola mundito");
+});
+
 app.get('/usuarios', async (req, res) => {
   const usuarios = await readData();
   res.json(usuarios.usuario);
@@ -66,6 +70,6 @@ app.post('/usuarios', async (req, res) => {
   res.status(201).json(newUser);
 });
 
-app.listen(PORT, () => {
+app.listen(port, () => {
   console.log(`Servidor escuchando en el puerto ${port}...`);
 });
