@@ -5,7 +5,7 @@
     "express": "^4.19.2"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/index.js"
   },
   "name": "restapi",
   "version": "1.0.0",

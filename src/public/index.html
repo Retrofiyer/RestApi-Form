@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIRest</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Enter user information</h2>
+        <label for="firstName">Name:</label>
+        <input type="text" id="firstName" placeholder="Nombre">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" placeholder="Apellido">
+        <label for="age">Age:</label>
+        <input type="number" id="age" placeholder="Edad">
+        <button id="addUserButton">Data Entry</button>
+        <button id="showUsersButton">Show users</button>
+    </div>
+    <div class="data-container">
+        <h2>User Data</h2>
+        <div id="usersData"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
