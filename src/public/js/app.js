@@ -1,5 +1,5 @@
 
-const apiUrl = `${window.location.origin}/usuarios`;
+const apiUrl = `${window.location.origin}/users`;
 
 console.log('API URL:', apiUrl);
 

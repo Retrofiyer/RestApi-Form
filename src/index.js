@@ -12,12 +12,12 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, './public')));
 
-app.get('/usuarios', getAllUsers);
-app.get('/usuarios/:id', getUserById);
-app.post('/usuarios', createUser);
+app.get('/users', getAllUsers);
+app.get('/users/:id', getUserById);
+app.post('/users', createUser);
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, './public/index.html'));
+  res.sendFile(path.join(__dirname, './public/view/index.html'));
 });
 
 app.listen(PORT, () => {
